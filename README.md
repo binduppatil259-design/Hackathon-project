@@ -1,52 +1,72 @@
-# AgriConnect 2.0 — Backend & Database
+# AgriConnect 2.0 — Farmer-to-Buyer Marketplace
 
-## Project Overview
-AgriConnect 2.0 is a digital marketplace that connects farmers with buyers. Farmers can register and list produce, while buyers can view available produce.
+AgriConnect is a digital marketplace designed to connect farmers directly with buyers, helping farmers showcase their produce and access market information.
 
-## Technologies
-- Python
-- FastAPI
-- Uvicorn
-- SQLite
+## Features
 
-## Project Files
-- `main.py` — Backend API endpoints and application logic
-- `database.py` — Database connection and table creation
-- `agriconnect.db` — SQLite database
-- `requirements.txt` — Python package dependencies
+- Farmer and buyer workflows
+- Produce listings and marketplace interface
+- FastAPI backend
+- SQLite database integration
+- Agricultural market-price lookup using the configured data source
+- AI-powered agricultural assistance, where configured
 
-## Setup on Mac
+## Technology Stack
 
-### 1. Open Terminal and enter the project folder
-```bash
-cd backend
-```
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Python, FastAPI, Uvicorn
+- **Database:** SQLite
+- **Market data:** data.gov.in API integration
 
-### 2. Create a virtual environment
-```bash
-python3 -m venv .venv
-```
+## Project Structure
 
-### 3. Activate the environment
-```bash
-source .venv/bin/activate
-```
+- `AgriConnect2_Frontend/` — Frontend interface and JavaScript
+- `backend/` — Backend modules, including market-price functionality
+- `main.py` — FastAPI application and API routes
+- `database.py` — Database connection and setup
+- `requirements.txt` — Python dependencies
+- `README_FULL_STACK.md` — Additional project documentation
 
-### 4. Install dependencies
-```bash
-pip install -r requirements.txt
-```
+## Setup on Windows
 
-### 5. Start the backend
-```bash
-python -m uvicorn main:app --reload
-```
+1. Open PowerShell in the project folder.
+2. Create a virtual environment:
 
-## Open the API
-- Home: http://127.0.0.1:8000
-- Interactive API documentation: http://127.0.0.1:8000/docs
+   ```powershell
+   python -m venv .venv
+   ```
 
-## Important Notes
-- Keep passwords, authentication tokens, and secret keys private.
-- Do not commit the `.venv` folder to Git.
-- The database file may contain test accounts and listings. Share it only if its contents are safe to share.
+3. Activate it:
+
+   ```powershell
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+4. Install dependencies:
+
+   ```powershell
+   pip install -r requirements.txt
+   ```
+
+5. Configure required environment variables in your local `.env` file. Never commit API keys or secrets.
+6. Start the backend using the command appropriate to your project configuration. For example:
+
+   ```powershell
+   uvicorn main:app --reload
+   ```
+
+7. Open `http://127.0.0.1:8000/docs` to inspect the API, if the server exposes FastAPI's documentation there.
+
+## Team Collaboration
+
+This repository is shared with the AgriConnect project collaborators. Please coordinate changes with the team and review changes before merging.
+
+## Security
+
+- Never commit API keys, passwords, tokens, or `.env` files.
+- Keep virtual environments and local database files out of version control.
+- Use real market data only when it is returned by the configured data source; do not fabricate prices.
+
+## Project Status
+
+This is a hackathon project under development. Features depend on the current implementation and configuration.
