@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+backend/.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+agriconnect.db
+*.db

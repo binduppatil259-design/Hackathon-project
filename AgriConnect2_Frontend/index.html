@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173f2b" />
+  <meta name="description" content="AgriConnect connects farmers and agricultural buyers for produce discovery, market intelligence and coordinated trade." />
+  <title>AgriConnect 2.0 — Agricultural Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <section class="auth-screen" id="authScreen" aria-label="AgriConnect account access">
+    <div class="auth-top"><a class="brand auth-brand" href="#"><span class="brand-mark">🌱</span><span><strong>AgriConnect<span class="brand-version"> 2.0</span></strong><small>Better connections. Better decisions.</small></span></a><span class="secure-note">● Agriculture marketplace</span></div>
+    <div class="auth-layout">
+      <div class="auth-story"><span class="eyebrow"><span class="eyebrow-dot"></span> ONE CONNECTED AGRICULTURAL MARKETPLACE</span><h1>Grow together.<br><em>Trade smarter.</em></h1><p>A shared agricultural marketplace with separate tools for the people growing produce and the businesses buying it.</p><div class="auth-benefits"><div><span>✓</span><div><strong>Market visibility</strong><small>Make decisions with clear, sourced information.</small></div></div><div><span>✓</span><div><strong>Stronger connections</strong><small>Find relevant partners and coordinate demand.</small></div></div><div><span>✓</span><div><strong>Two focused workspaces</strong><small>Tools designed for farmers and buyers.</small></div></div></div><div class="auth-land-art" aria-hidden="true"><span>🌱</span><span>🌾</span><span>🌿</span><span>🧺</span></div></div>
+      <div class="auth-card">
+        <div class="auth-step-label">GET STARTED</div><h2 id="authHeading">Who is joining AgriConnect?</h2><p class="auth-intro" id="authIntro">Choose your role to open a workspace designed for your needs.</p>
+        <div class="role-options" id="roleOptions">
+          <button class="role-option selected" data-role="farmer" type="button"><span class="role-icon">🌾</span><span><strong>Farmer</strong><small>Manage produce and compare selling options</small></span><span class="role-check">✓</span></button>
+          <button class="role-option" data-role="buyer" type="button"><span class="role-icon">🛒</span><span><strong>Buyer</strong><small>Post demand and source available produce</small></span><span class="role-check">✓</span></button>
+        </div>
+        <div class="auth-tabs"><button type="button" class="auth-tab active" data-auth-mode="login">Log in</button><button type="button" class="auth-tab" data-auth-mode="register">Create account</button></div>
+        <form id="authForm" class="auth-form"><label id="nameField" hidden>Full name / business name<input id="authName" autocomplete="name" placeholder="Enter your name or business name"></label><label>Email address<input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required></label><label>Password<input id="authPassword" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required></label><label id="locationField">Location<input id="authLocation" placeholder="Village / town, district"></label><button class="button button-primary full-width" type="submit" id="authSubmit">Continue to workspace <span>→</span></button><p class="auth-feedback" id="authFeedback" role="status" aria-live="polite">Choose a role, then log in or create an account.</p></form>
+        <p class="auth-terms">By continuing, you agree to use accurate information and respect other users' privacy.</p>
+      </div>
+    </div><div class="auth-footer"><span>© AgriConnect 2.0</span><span>Built for farmers and agricultural buyers</span></div>
+  </section>
+
+  <div class="app-shell" id="appShell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="AgriConnect home">
+        <span class="brand-mark">🌱</span>
+        <span><strong>AgriConnect<span class="brand-version"> 2.0</span></strong><small>Market intelligence</small></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-page="overview"><span>◫</span> Overview</button>
+        <button class="nav-item" data-page="my-produce"><span>🌾</span> My produce</button>
+        <button class="nav-item" data-page="find-buyers"><span>⌕</span> Find buyers <span class="nav-count">3</span></button>
+        <button class="nav-item" data-page="market-prices"><span>↗</span> Market prices</button>
+        <button class="nav-item" data-page="aggregation"><span>⤢</span> Order aggregation</button>
+        <button class="nav-item" data-page="insights"><span>✦</span> AI insights</button>
+      </nav>
+      <div class="role-context" id="roleContext">Farmer workspace</div>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>Meet Agri AI</strong><p>Understand your options before you decide.</p><button class="text-button" data-page="insights">Explore insights <span>→</span></button></div>
+        <button class="profile-button"><span class="avatar">RP</span><span class="profile-text"><strong id="profileName">My account</strong><small id="profileRole">Farmer workspace</small></span><span class="dots">•••</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+        <div class="breadcrumbs">Workspace <span>/</span> <strong id="breadcrumbCurrent">Overview</strong></div>
+        <div class="top-actions"><span class="service-status"><i></i> Market workspace</span><button class="icon-button" aria-label="Notifications">♧<b></b></button><span class="avatar top-avatar">RP</span></div>
+      </header>
+
+      <section class="page active-page" id="page-overview">
+        <div class="welcome-row">
+          <div><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR AGRICULTURAL WORKSPACE</div><h1 id="welcomeTitle">Welcome back <span>☀️</span></h1><p class="subheading">Let's find the best path to market for your produce.</p></div>
+          <button class="button button-primary" data-page="my-produce"><span>＋</span> Add produce</button>
+        </div>
+        <div class="hero-banner">
+          <div class="hero-copy"><span class="hero-kicker">YOUR FARM. MORE POSSIBILITIES.</span><h2>One harvest.<br><em>More ways to sell.</em></h2><p>Compare buyers, market prices and delivery routes in one place — then choose what works for you.</p><button class="button button-light" data-page="find-buyers">Explore buyer matches <span>→</span></button></div>
+          <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="crop crop-one">🌾</div><div class="crop crop-two">🌿</div><div class="crop crop-three">🌱</div><div class="harvest-basket">🧺</div><div class="floating-pill"><span>✦</span> AI-assisted matching</div></div>
+        </div>
+        <div class="section-heading"><div><h2>Your farm at a glance</h2><p>A quick look at your current opportunities.</p></div><button class="subtle-button" data-page="insights">View insights <span>→</span></button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Active produce listings</span><span class="stat-icon green">🌾</span></div><div class="stat-value">—</div><div class="stat-foot">Loaded from your saved listings</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Potential buyer matches</span><span class="stat-icon lilac">✦</span></div><div class="stat-value">—</div><div class="stat-foot">Based on current matching results</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Nearby tomato price</span><span class="stat-icon amber">₹</span></div><div class="stat-value">—</div><div class="stat-foot"><span class="muted">Connect market data to view current prices</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Nearby small-order demand</span><span class="stat-icon blue">⌁</span></div><div class="stat-value">—</div><div class="stat-foot"><span class="muted">Calculated from entered buyer demand</span></div></article>
+        </div>
+        <div class="content-grid">
+          <article class="panel price-panel">
+            <div class="panel-heading"><div><h3>Market snapshot</h3><p>Market price observations · ₹ per kg</p></div><button class="icon-link" data-page="market-prices">See all →</button></div>
+            <div class="empty-state compact-empty"><span>↗</span><strong>Market trend unavailable</strong><p>Connect a verified market-data source to display price history with dates and units.</p></div>
+            <div class="chart-legend"><span>Market observations</span><small>Source and update time will appear with connected data</small></div>
+          </article>
+          <article class="panel matches-panel">
+            <div class="panel-heading"><div><h3>Recommended for you</h3><p>Options based on your available produce</p></div><span class="ai-chip">✦ AI assisted</span></div>
+            <div class="empty-state compact-empty"><span>⌕</span><strong>No buyer matches loaded</strong><p>Buyer opportunities will appear after the matching service returns verified results.</p></div>
+            <button class="button button-outline full-width" data-page="find-buyers">Compare all options</button>
+          </article>
+        </div>
+        <div class="notice"><span class="notice-icon">ⓘ</span><div><strong>Decisions stay in your hands</strong><p>Recommendations are decision support, not guarantees. Check actual prices, quality requirements, transport costs and buyer availability before accepting an offer.</p></div></div>
+      </section>
+
+      <section class="page" id="page-my-produce">
+        <div class="page-intro"><div><div class="eyebrow">YOUR INVENTORY</div><h1>My produce</h1><p class="subheading">Tell buyers what you have available and when it can be delivered.</p></div><span class="page-icon">🌾</span></div>
+        <div class="content-grid form-layout">
+          <article class="panel"><div class="panel-heading"><div><h3>Add a produce listing</h3><p>Fields marked * are required.</p></div></div>
+            <form id="produceForm" class="form-grid">
+              <label>Crop / produce *<select id="crop" required><option value="">Choose produce</option><option>Tomato</option><option>Onion</option><option>Potato</option><option>Rice</option><option>Wheat</option><option>Other</option></select></label>
+              <label>Quantity available (kg) *<input id="quantity" type="number" min="1" placeholder="e.g. 2000" required></label>
+              <label>Quality / grade<select id="quality"><option>Grade A</option><option>Grade B</option><option>Standard</option><option>Organic (self-declared)</option></select></label>
+              <label>Available from *<input id="availableDate" type="date" required></label>
+              <label>Asking price (₹ / kg) *<input id="askingPrice" type="number" min="0.01" step="0.01" placeholder="Your expected price" required></label>
+              <label>Farm / pickup location *<input id="location" placeholder="Village / town, district" required></label>
+              <label class="span-2">Additional details<textarea id="produceNotes" rows="3" placeholder="Harvest details, packaging, preferred pickup time…"></textarea></label>
+              <div class="span-2 form-actions"><button type="reset" class="button button-ghost">Clear form</button><button type="submit" class="button button-primary">Save listing <span>→</span></button></div>
+            </form><p class="form-hint">Add your asking price and compare it with current market observations before publishing. Listings are saved permanently when the backend API is configured.</p>
+          </article>
+          <article class="panel listing-side"><div class="panel-heading"><div><h3>Your current listings</h3><p id="listingCount">Your saved listings</p></div></div><div id="listingList" class="listing-list">
+            <div class="listing-row"><span class="produce-emoji">🍅</span><div><strong>Tomato</strong><small>2,000 kg · Grade A</small><small>Ramanagara</small></div><span class="status-pill status-ready">Matching</span></div>
+            <div class="listing-row"><span class="produce-emoji">🧅</span><div><strong>Onion</strong><small>800 kg · Grade A</small><small>Ramanagara</small></div><span class="status-pill">Available</span></div>
+            <div class="listing-row"><span class="produce-emoji">🥔</span><div><strong>Potato</strong><small>500 kg · Standard</small><small>Kanakapura</small></div><span class="status-pill">Available</span></div>
+            <div class="listing-row"><span class="produce-emoji">🌾</span><div><strong>Rice</strong><small>350 kg · Grade A</small><small>Ramanagara</small></div><span class="status-pill">Available</span></div>
+          </div></article>
+        </div>
+      </section>
+
+      <section class="page" id="page-find-buyers">
+        <div class="page-intro"><div><div class="eyebrow">SMART MATCHING</div><h1>Find your best buyers</h1><p class="subheading">Compare opportunities by quantity, location, timing and route — not just price.</p></div><span class="page-icon">✦</span></div>
+        <div class="filter-bar panel"><label>Produce<select id="matchCrop"><option>Tomato</option><option>Onion</option><option>Potato</option><option>Rice</option><option>Wheat</option></select></label><label>Available quantity<select id="matchQty"><option value="2000">2,000 kg</option><option value="500">500 kg</option><option value="1000">1,000 kg</option><option value="3000">3,000 kg</option></select></label><label>Market scale<select id="marketScale"><option value="all">All routes</option><option value="local">Local</option><option value="regional">Regional</option></select></label><button class="button button-primary" id="runMatching">✦ Update matches</button></div>
+        <div class="result-summary"><div><h2 id="matchResultTitle">Buyer opportunities</h2><p>Results are based on available buyer requirements and matching criteria.</p></div><span class="ai-chip">✦ AI-assisted concept</span></div>
+        <div id="buyerResults" class="buyer-results"><div class="panel empty-state"><span>⌕</span><strong>No matches loaded</strong><p>Run matching after the backend is connected. Only buyer requirements returned by the service should appear here.</p></div></div>
+        <div class="notice"><span class="notice-icon">ⓘ</span><div><strong>Review before accepting an offer</strong><p>Check the buyer identity, confirmed demand, quality requirements, delivery terms and final costs before committing.</p></div></div>
+      </section>
+
+      <section class="page" id="page-market-prices">
+        <div class="page-intro"><div><div class="eyebrow">MARKET INTELLIGENCE</div><h1>Market prices</h1><p class="subheading">Compare indicative price signals before choosing a selling route.</p></div><span class="page-icon">↗</span></div>
+        <div class="notice"><span class="notice-icon">ⓘ</span><div><strong>Market data</strong><p>Prices should be sourced from a verified market-data provider. Review the source, market, observation date and unit before making a decision.</p></div></div>
+        <div class="panel market-toolbar"><label>Commodity<select id="priceCrop"><option>Tomato</option><option>Onion</option><option>Potato</option><option>Rice</option><option>Wheat</option></select></label><label>Market area<select id="priceArea"><option>Near Ramanagara</option><option>Bengaluru region</option><option>Karnataka</option></select></label><span class="muted">Unit: ₹ / kg</span></div>
+        <div class="stats-grid price-stats"><article class="stat-card"><div class="stat-top"><span>Lowest reported price</span><span class="stat-icon green">↓</span></div><div class="stat-value" id="priceLow">—</div><div class="stat-foot">Reported range for selected market</div></article><article class="stat-card"><div class="stat-top"><span>Average reported price</span><span class="stat-icon blue">≈</span></div><div class="stat-value" id="priceAvg">—</div><div class="stat-foot">Reported range for selected market</div></article><article class="stat-card"><div class="stat-top"><span>Highest reported price</span><span class="stat-icon amber">↑</span></div><div class="stat-value" id="priceHigh">—</div><div class="stat-foot">Reported range for selected market</div></article><article class="stat-card"><div class="stat-top"><span>Last updated</span><span class="stat-icon lilac">◷</span></div><div class="stat-value small-value">—</div><div class="stat-foot">Source status shown when connected</div></article></div>
+        <article class="panel"><div class="panel-heading"><div><h3>Compare selling routes</h3><p>Compare routes using your selected quantity and current offers.</p></div></div><div class="table-wrap"><table><thead><tr><th>Route</th><th>Indicative price</th><th>Estimated logistics</th><th>Net estimate*</th><th>Notes</th></tr></thead><tbody id="routeTable"><tr><td colspan="5">Connect verified buyer offers and logistics estimates to compare routes.</td></tr></tbody></table></div><p class="table-note">*Net estimates depend on verified offers and applicable costs. They are estimates, not price guarantees.</p></article>
+      </section>
+
+      <section class="page" id="page-aggregation">
+        <div class="page-intro"><div><div class="eyebrow">SMALL-ORDER OPPORTUNITY</div><h1>Order aggregation</h1><p class="subheading">Explore whether multiple small buyer needs could fit one harvest.</p></div><span class="page-icon">⤢</span></div>
+        <div class="aggregation-hero"><div><span class="hero-kicker">AGGREGATION PLANNER</span><h2>Small orders.<br><em>One coordinated route.</em></h2><p>Review whether compatible buyer requirements can be grouped. Confirm quantities, locations, timing and costs before committing.</p></div><div class="agg-total"><span>Combined demand entered</span><strong id="aggTotal">0 <small>kg</small></strong><span class="status-pill">Awaiting demand entries</span></div></div>
+        <div class="aggregation-layout"><article class="panel"><div class="panel-heading"><div><h3>Nearby buyer requirements</h3><p>Change quantities to explore the scenario.</p></div><button class="subtle-button" id="resetAggregation">Reset</button></div><div class="demand-list">
+          <label class="demand-row"><span class="demand-icon">🍽️</span><span class="demand-info"><strong>Restaurant</strong><small>Local food service</small></span><input class="demand-quantity" type="number" min="0" value="0" aria-label="Restaurant demand in kilograms"><span>kg</span></label>
+          <label class="demand-row"><span class="demand-icon">🛒</span><span class="demand-info"><strong>Retailer</strong><small>Neighbourhood store</small></span><input class="demand-quantity" type="number" min="0" value="0" aria-label="Retailer demand in kilograms"><span>kg</span></label>
+          <label class="demand-row"><span class="demand-icon">🥡</span><span class="demand-info"><strong>Cloud kitchen</strong><small>Food preparation</small></span><input class="demand-quantity" type="number" min="0" value="0" aria-label="Cloud kitchen demand in kilograms"><span>kg</span></label>
+          <label class="demand-row"><span class="demand-icon">🏪</span><span class="demand-info"><strong>Local store</strong><small>Small retail order</small></span><input class="demand-quantity" type="number" min="0" value="0" aria-label="Local store demand in kilograms"><span>kg</span></label>
+        </div><div class="aggregation-footer"><span>Combined quantity</span><strong id="aggTotalBottom">200 kg</strong></div></article>
+        <article class="panel"><div class="panel-heading"><div><h3>Potential aggregation fit</h3><p>Based on quantities entered</p></div></div><div class="fit-visual"><div class="fit-ring" id="fitRing"><span id="fitPercent">10%</span></div><div><strong id="fitTitle">Small demand cluster</strong><p id="fitDescription">These example orders could form a small cluster. Confirm pickup locations, delivery windows and quality needs before coordinating.</p></div></div><div class="route-steps"><div><span>1</span><div><strong>Match compatible needs</strong><small>Crop, grade, quantity and timing</small></div></div><div><span>2</span><div><strong>Compare fulfilment routes</strong><small>Distance, collection and estimated costs</small></div></div><div><span>3</span><div><strong>Confirm with participants</strong><small>Nothing is booked automatically</small></div></div></div><button class="button button-primary full-width" id="simulateAggregation">Recalculate scenario <span>→</span></button></article></div>
+      </section>
+
+      <section class="page" id="page-insights">
+        <div class="page-intro"><div><div class="eyebrow">YOUR DECISION COMPANION</div><h1>AI insights</h1><p class="subheading">Ask practical questions about selling routes, price comparisons and aggregation.</p></div><span class="page-icon">✦</span></div>
+        <div class="ai-layout"><article class="panel assistant-panel"><div class="assistant-header"><div class="assistant-avatar">✦</div><div><strong>Agri AI</strong><small><i class="online-dot"></i> Assistant availability depends on configured service</small></div><span class="ai-chip">NVIDIA model-ready UI</span></div><div class="chat-body" id="chatBody"><div class="chat-message assistant-message"><span class="chat-avatar">✦</span><div><p>Namaste! 🌱 I can help you understand produce listings, buyer requirements and selling options when connected to current platform data.</p><p>For example, we can look at quantity fit, market price signals, distance and whether nearby small orders could be combined.</p><small>Responses depend on the connected assistant service</small></div></div><div class="prompt-suggestions"><button class="prompt-chip">How should I compare buyers?</button><button class="prompt-chip">Explain order aggregation</button><button class="prompt-chip">What costs should I check?</button></div></div><form class="chat-input-area" id="chatForm"><input id="chatInput" placeholder="Ask about your selling options…" autocomplete="off" required><button class="send-button" aria-label="Send message">↑</button></form><p class="chat-disclaimer">Assistant responses require a configured backend model service. Do not treat generated suggestions as guaranteed prices, offers or transactions.</p></article>
+          <aside class="insight-side"><article class="panel"><div class="panel-heading"><div><h3>What Agri AI considers</h3><p>Decision factors in the proposal</p></div></div><div class="factor-list"><div><span class="factor-icon green">🌾</span><div><strong>Produce fit</strong><small>Crop, quantity, quality and availability</small></div></div><div><span class="factor-icon blue">📍</span><div><strong>Location & timing</strong><small>Distance, pickup window and deadline</small></div></div><div><span class="factor-icon amber">₹</span><div><strong>Market intelligence</strong><small>Historical prices and demand signals</small></div></div><div><span class="factor-icon lilac">🚚</span><div><strong>Logistics-aware options</strong><small>Estimated cost and fulfilment route</small></div></div></div></article><article class="panel responsible-card"><span class="responsible-icon">ⓘ</span><h3>Transparent by design</h3><p>Recommendations should explain why an option may fit, identify estimates clearly and leave the final decision to the farmer.</p></article></aside></div>
+      </section>
+      <footer class="app-footer"><span>🌱 AgriConnect 2.0</span><span>From access to intelligence.</span><span>Agricultural marketplace and market intelligence</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><span class="modal-icon">🌱</span><h2 id="modalTitle">Opportunity details</h2><p id="modalText"></p><div class="modal-actions"><button class="button button-ghost" id="modalCancel">Close</button><button class="button button-primary" id="modalConfirm">Mark for follow-up</button></div></div></div>
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+  <script src="roles.js"></script>
+</body>
+</html>
